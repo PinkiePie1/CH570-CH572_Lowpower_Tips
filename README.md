@@ -71,6 +71,6 @@ Although connecting a 1 MΩ resistor between VCC and V5 can help reduce this exc
 
 ## Unofficial test results
 
-- Datasheet asked for a 1.5k resistor between VCC and V5. Priliminary tests suggests that it is not necessary to do so. The MCU works fine without.
+- Datasheet asked for a 1.5k resistor between VCC and V5. Preliminary tests suggest that it is not necessary to do so. The MCU works fine without.
 
-- `LowPower_Sleep()` in the SDK tweaks battery voltage detection, clock settings and stuff before entering sleep mode, none is necessary. One can simply configure `R8_SLP_POWER_CTRL`, `R16_POWER_PLAN` and then call `__WFI()`. **But a 40 us delay must be added after the MCU wakes up to wait for HSE and PLL to be stable.**
+- `LowPower_Sleep()` in the SDK tweaks battery voltage detection, clock settings, and stuff before entering sleep mode; none is necessary. One can simply configure `R8_SLP_POWER_CTRL`, `R16_POWER_PLAN` and then call `__WFI()`. **But a 40 us delay must be added after the MCU wakes up to wait for HSE and PLL to be stable.**
